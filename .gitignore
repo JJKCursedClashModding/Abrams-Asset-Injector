@@ -50,6 +50,7 @@ x86/
 # Runtime logs
 *.log
 register.log
+manager_dump.txt
 
 # IDE / editor
 .idea/
