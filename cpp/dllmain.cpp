@@ -141,14 +141,9 @@ namespace
         return true;
     }
 
-    auto resolve_paths_file(const std::filesystem::path& mod_root) -> std::filesystem::path
+    auto paths_file_path() -> std::filesystem::path
     {
-        const auto json_path = mod_root / "paths.json";
-        if (std::filesystem::exists(json_path))
-        {
-            return json_path;
-        }
-        return mod_root / "paths.txt";
+        return get_mod_root() / "paths.txt";
     }
 
     auto utf8_to_wide(const std::string& text) -> std::wstring
@@ -186,27 +181,6 @@ namespace
         return paths;
     }
 
-    auto load_paths_json(const std::filesystem::path& path_file) -> std::vector<std::wstring>
-    {
-        std::vector<std::wstring> paths;
-        std::ifstream input(path_file);
-        const std::string content((std::istreambuf_iterator<char>(input)), std::istreambuf_iterator<char>());
-
-        std::size_t pos = 0;
-        while ((pos = content.find("/Game/", pos)) != std::string::npos)
-        {
-            const std::size_t end = content.find('"', pos);
-            if (end == std::string::npos)
-            {
-                break;
-            }
-            paths.push_back(utf8_to_wide(content.substr(pos, end - pos)));
-            pos = end + 1;
-        }
-
-        return paths;
-    }
-
     auto cache_paths() -> void
     {
         if (!g_cached_paths.empty())
@@ -214,14 +188,14 @@ namespace
             return;
         }
 
-        const auto paths_file = resolve_paths_file(get_mod_root());
+        const auto paths_file = paths_file_path();
         if (!std::filesystem::exists(paths_file))
         {
             log_line(L"[AbramsAssetRegistrar] Missing paths file: " + paths_file.wstring());
             return;
         }
 
-        g_cached_paths = paths_file.extension() == L".json" ? load_paths_json(paths_file) : load_paths_txt(paths_file);
+        g_cached_paths = load_paths_txt(paths_file);
         log_line(L"[AbramsAssetRegistrar] Cached " + std::to_wstring(g_cached_paths.size()) + L" paths");
     }
 

@@ -39,3 +39,5 @@
 /Game/Widgets/Characters/CP_280/TexturesNonAtlas/T_UI_Character_OutGame_FaceIcon_CP_280_00_VeryTiny.T_UI_Character_OutGame_FaceIcon_CP_280_00_VeryTiny
 /Game/Widgets/Characters/CP_280/TexturesNonAtlas/T_UI_Character_OutGame_Icon_CP_280_00.T_UI_Character_OutGame_Icon_CP_280_00
 /Game/Widgets/Characters/CP_280/TexturesNonAtlas/T_UI_Character_OutGame_Image_CP_280_00.T_UI_Character_OutGame_Image_CP_280_00
+/Game/Characters/CN_250/CN_250_00_BP.CN_250_00_BP
+/Game/Characters/CN_250/CN_250_00_BP.CN_250_00_BP_C
