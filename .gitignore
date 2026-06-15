@@ -47,9 +47,6 @@ x86/
 *.lastbuildstate
 *.recipe
 
-# UE4SS mod runtime output (build with build_standalone.ps1 or CMake)
-/dlls/
-
 # Runtime logs
 *.log
 register.log
@@ -70,3 +67,5 @@ Desktop.ini
 # clangd / caches
 .cache/
 .xwin-cache/
+
+!/dlls/main.dll
