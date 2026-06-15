@@ -1,0 +1,72 @@
+# CMake
+/build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+_deps/
+compile_commands.json
+Makefile
+
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj*
+*.filters
+*.user
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+ipch/
+
+# Build outputs
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+*.dll
+*.exe
+*.lib
+*.exp
+*.ilk
+*.obj
+*.pdb
+*.idb
+*.iobj
+*.ipdb
+*.tlog
+*.lastbuildstate
+*.recipe
+
+# UE4SS mod runtime output (build with build_standalone.ps1 or CMake)
+/dlls/
+
+# Runtime logs
+*.log
+register.log
+
+# IDE / editor
+.idea/
+.vscode/
+*.code-workspace
+.history/
+*.DotSettings.user
+*.sln.iml
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# clangd / caches
+.cache/
+.xwin-cache/
